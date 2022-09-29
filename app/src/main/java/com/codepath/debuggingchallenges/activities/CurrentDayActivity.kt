@@ -9,16 +9,21 @@ import java.util.*
 
 class CurrentDayActivity : AppCompatActivity() {
     var tvDay: TextView? = null
+
+    private val dayOfMonth: String
+        get() {
+            val cal = Calendar.getInstance()
+            return cal[Calendar.DAY_OF_MONTH].toString()
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_current_day)
         tvDay = findViewById<View>(R.id.tvDay) as TextView
         tvDay?.setText(dayOfMonth)
+
+
     }
 
-    private val dayOfMonth: Int
-        get() {
-            val cal = Calendar.getInstance()
-            return cal[Calendar.DAY_OF_MONTH]
-        }
+
 }
